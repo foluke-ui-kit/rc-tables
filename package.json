@@ -40,7 +40,6 @@
     "datatables": "^1.10.7",
     "file-loader": "^0.8.4",
     "gulp": "^3.8.9",
-    "jquery": "^2.1.4",
     "jsx-loader": "^0.13.2",
     "node-libs-browser": "^0.5.2",
     "object-assign": "^2.0.0",
