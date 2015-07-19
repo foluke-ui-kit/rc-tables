@@ -2,7 +2,7 @@
   "name": "@shawnsandy/rc-tables",
   "version": "0.1.0",
   "description": "A react table component",
-  "main": "index.js",
+  "main": "src/libs/rc-table.jsx",
   "scripts": {
     "postinstall": "bower install",
     "preinstall": "npm -v && bower -v",
