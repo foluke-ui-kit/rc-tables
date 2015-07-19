@@ -1,8 +1,8 @@
 {
-  "name": "@shawnsandy/rts-datatables",
-  "version": "0.3.0",
-  "description": "React plugins for displaying data using tables",
-  "main": "app/main.js",
+  "name": "@shawnsandy/rc-tables",
+  "version": "0.1.0",
+  "description": "A react table component",
+  "main": "index.js",
   "scripts": {
     "postinstall": "bower install",
     "preinstall": "npm -v && bower -v",
