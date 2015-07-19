@@ -1,0 +1,53 @@
+{
+  "name": "@shawnsandy/rts-datatables",
+  "version": "0.3.0",
+  "description": "React plugins for displaying data using tables",
+  "main": "app/main.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "preinstall": "npm -v && bower -v",
+    "preversion": "npm run build",
+    "postversion": "git push --tags && npm run git-push",
+    "development": "webpack -d --watch & browser-sync start --config bs-config.js ",
+    "git-commit": "git add -A . && git commit -a -m 'Release package'",
+    "git-push": "git push origin develop",
+    "build": "rm -r app/* && webpack -p --progress --colors",
+    "release": "npm run build && npm run git-commit && npm run version:patch",
+    "version:patch": "npm version patch && git push --tags",
+    "liveview": "browser-sync start --config bs-config.js",
+    "updates": "npm update && bower update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foluke-ui-kit/start-react.git"
+  },
+  "keywords": [
+    "react",
+    "tables",
+    "react-components"
+  ],
+  "author": "shawn sandy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foluke-ui-kit/start-react/issues"
+  },
+  "homepage": "https://github.com/foluke-ui-kit/start-react",
+  "devDependencies": {
+    "babel-core": "^5.6.15",
+    "babel-loader": "^5.3.0",
+    "browser-sync": "^2.7.6",
+    "css-loader": "^0.14.4",
+    "datatables": "^1.10.7",
+    "file-loader": "^0.8.4",
+    "gulp": "^3.8.9",
+    "jquery": "^2.1.4",
+    "jsx-loader": "^0.13.2",
+    "node-libs-browser": "^0.5.2",
+    "object-assign": "^2.0.0",
+    "react": "^0.13.3",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "watchify": "^3.2.1",
+    "webpack": "^1.9.10"
+  }
+}
