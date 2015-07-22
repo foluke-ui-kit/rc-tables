@@ -12,3 +12,4 @@ var cols = ['ID','First Name','Last Name'];
 var colsTables = ['id','first_name','last_name'];
 
 React.render(<DataTables data={data} cols={cols} colTables={colsTables} />, document.getElementById('component'));
+

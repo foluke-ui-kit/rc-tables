@@ -40,22 +40,9 @@ var RcTable = React.createClass({
     }
   },
 
-  componentDidMount() {
-
-    this.setState({
-      data: this.props.data
-    })
-  },
-
-  getInitialState: function() {
-    return {
-      'data': []
-    }
-  },
-
   render: function() {
 
-    var tr = this.state.data;
+    var tr = this.props.data;
 //console.log(tr[0]);
     var cols = this.props.colTables;
     var rows = tr.map(function(row, key) {
@@ -91,7 +78,6 @@ RcTable.Rows = React.createClass({
 
   getDefaultProps() {
     return {
-
       colsTables: []
     }
   },
