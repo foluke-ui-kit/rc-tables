@@ -119,6 +119,47 @@ Caption.defaultProps = {
 
 
 /**
+ * Table Elements
+ */
+
+export class TableBody extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        var tr = this.props.data;
+        var cols = this.props.colTables;
+        var rows = tr.map(function (row, key) {
+            return (
+                <Rows colsTables={cols} data={row} key={key}/>
+
+            )
+            console.log(rows);
+        });
+        return (
+            <tbody>{rows}</tbody>
+        )
+    }
+
+
+}
+
+TableBody.PropTypes = {
+    colTables: React.PropTypes.array.isRequired,
+    data: React.PropTypes.array.isRequired
+}
+
+TableBody.defaultProps = {
+    data: [],
+    colTables: []
+
+}
+
+
+
+/**
  * Table Component
  */
 export class RcTable extends React.Component {
@@ -130,25 +171,18 @@ export class RcTable extends React.Component {
 
     render() {
 
-        var tr = this.props.data;
-//console.log(tr[0]);
-        var cols = this.props.colTables;
-        var rows = tr.map(function (row, key) {
-//  console.log(key);
-            return (
-                <Rows colsTables={cols} data={row} key={key}/>
 
-            )
-        });
+        var cols = this.props.colTables;
+
 
         return(
             <div>
                 <table className={this.props.selector} ref="dataTable">
                     <Caption caption={this.props.tableCaption}/>
                     <Header cols={this.props.cols }/>
-                    <tbody>
-                    {rows}
-                    </tbody>
+
+                    <TableBody data={this.props.data} colTables={this.props.colsTables}  />
+
                 </table>
             </div>
         )
@@ -157,18 +191,11 @@ export class RcTable extends React.Component {
 
 }
 
-RcTable.PropTypes = {
-    cols: React.PropTypes.array.isRequired,
-    colTables: React.PropTypes.array.isRequired,
-    data: React.PropTypes.array.isRequired
-}
 
 RcTable.defaultProps = {
-    data: [],
     selector: 'table table-hover',
-    cols: [],
-    colTables: [],
-    tableCaption: ''
+    tableCaption: '',
+    colTables: []
 }
 
 
