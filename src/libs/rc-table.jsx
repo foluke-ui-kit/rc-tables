@@ -119,15 +119,9 @@ Caption.defaultProps = {
 
 
 /**
- * Table Content
- */
-
-
-
-/**
  * Table Component
  */
-export default class RcTable extends React.Component {
+export class RcTable extends React.Component {
 
     constructor(props) {
         super(props)
@@ -161,6 +155,7 @@ export default class RcTable extends React.Component {
 
     }
 
+}
 
 RcTable.PropTypes = {
     cols: React.PropTypes.array.isRequired,
