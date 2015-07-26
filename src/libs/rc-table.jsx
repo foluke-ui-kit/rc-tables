@@ -158,8 +158,8 @@ TableBody.PropTypes = {
 
 TableBody.defaultProps = {
     data: [],
-    colTables: []
-
+    colTables: [],
+    cols: []
 }
 
 

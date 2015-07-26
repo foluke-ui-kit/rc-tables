@@ -60,7 +60,6 @@ export class RcTable extends React.Component {
         super(props)
     }
 
-
     render() {
 
 
@@ -78,6 +77,19 @@ export class RcTable extends React.Component {
         )
 
     }
+    
+    RcTable.defaultProps = {
+        selector: 'table table-hover',
+        tableCaption: '',
+        colTables: []
+    }    
+    
+    TableBody.defaultProps = {
+        data: [],
+        colTables: [],
+        'cols:[]
+    }
+
 
 }
 ```
