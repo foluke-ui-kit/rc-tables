@@ -1,10 +1,9 @@
 {
   "name": "@shawnsandy/rc-tables",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "description": "A react table component",
   "main": "src/libs/rc-table.jsx",
   "scripts": {
-    "postinstall": "bower install",
     "preinstall": "npm -v && bower -v",
     "preversion": "npm run build",
     "postversion": "git push --tags && npm run git-push",
