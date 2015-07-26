@@ -14,42 +14,25 @@
 import React from 'react';
 
 /**
- * Table Rows
+ * Table Caption
  */
-export class Rows extends React.Component {
+
+class Caption extends React.Component {
 
     constructor(props) {
         super(props);
     }
 
     render() {
-        var data = this.props.data;
-//
-        var rows = this.props.colsTables.map(function (d, k) {
-//console.log(d);
-            return (
-                <td key={k}>
-                    {data[d]}
-                </td>
-            );
-
-        })
         return (
-            <tr>
-                {rows}
-            </tr>
+            <caption>{ this.props.caption }</caption>
         )
     }
 
 }
 
-Rows.PropTypes = {
-    data: React.PropTypes.object.isRequired,
-    colsTables: React.PropTypes.array.isRequired
-}
-
-Rows.defaultProps = {
-    colsTables: []
+Caption.defaultProps = {
+    caption: ""
 }
 
 
@@ -95,26 +78,45 @@ Header.defaultProps = {
 
 
 /**
- * table Caption
+ * Table Rows
  */
-
-class Caption extends React.Component {
+export class Rows extends React.Component {
 
     constructor(props) {
         super(props);
     }
 
     render() {
+        var data = this.props.data;
+       // console.log(data);
+
+//
+        var rows = this.props.colsTables.map(function (d, k) {
+
+            return (
+                <td key={k}>
+                 {data[d]}
+                </td>
+            );
+
+        })
         return (
-            <caption>{ this.props.caption }</caption>
+            <tr>
+                {rows}
+            </tr>
         )
     }
 
-
 }
 
-Caption.defaultProps = {
-    caption: ""
+Rows.PropTypes = {
+    data: React.PropTypes.object.isRequired,
+    colsTables: React.PropTypes.array.isRequired
+}
+
+Rows.defaultProps = {
+    colsTables: [],
+    data: []
 }
 
 
@@ -129,20 +131,23 @@ export class TableBody extends React.Component {
     }
 
     render() {
-        var tr = this.props.data;
-        var cols = this.props.colTables;
-        var rows = tr.map(function (row, key) {
-            return (
-                <Rows colsTables={cols} data={row} key={key}/>
 
+        var cols = this.props.colTables;
+        console.log(cols);
+        var data = this.props.data;
+
+        var rows = data.map(function (row, key) {
+            return (
+                <Rows colsTables={cols} data={row} key={key} />
             )
-            console.log(rows);
         });
+
         return (
-            <tbody>{rows}</tbody>
+            <tbody>
+            {rows}
+            </tbody>
         )
     }
-
 
 }
 
@@ -180,9 +185,7 @@ export class RcTable extends React.Component {
                 <table className={this.props.selector} ref="dataTable">
                     <Caption caption={this.props.tableCaption}/>
                     <Header cols={this.props.cols }/>
-
-                    <TableBody data={this.props.data} colTables={this.props.colsTables}  />
-
+                    <TableBody data={this.props.data} colTables={this.props.colTables}  />
                 </table>
             </div>
         )
@@ -199,7 +202,9 @@ RcTable.defaultProps = {
 }
 
 
-/**
- * export the element
- */
-export default RcTable;
+TableBody.defaultProps = {
+    data: [],
+    colTables: []
+
+}
+
