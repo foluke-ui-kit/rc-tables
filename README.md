@@ -1,6 +1,6 @@
 # RC-Tables
 
-A simple and easy to use set of ES6 classes for building react table components
+A simple and easy to use set of ES6 classes for building react table components -- created for use as a base in building dynamic react apps for displaying data-sets.
 
 ## Install
 
@@ -22,7 +22,7 @@ __Sample Component__
  
 import React from 'react';
 
-import { RcTable } from '../src/libs/rc-table.jsx';
+import { RcTable } from '@shawnsandy/rc-table.jsx';
 
 var data = [{"id":1,"first_name":"Beth","last_name":"Leffler","ssn":"351875239","username":"ludwig","password":"atnobisiusto","gender":"female","created_at":"2015-06-03T00:26:26.884Z","updated_at":"2015-06-03T00:26:26.884Z"},
 {"id":2,"first_name":"Clair","last_name":"Hackett","ssn":"516821623","username":"erwin.hoeger","password":"doloroptioest","gender":"female","created_at":"2015-06-03T00:26:26.891Z","updated_at":"2015-06-03T00:26:26.891Z"},
@@ -44,6 +44,42 @@ var colsTables = ['id','first_name','last_name'];
 
 React.render(<RcTable data={data} cols={cols} colTables={colsTables} />, document.getElementById('component'));
  
+```
+
+__In a react app__
+
+```
+import React from 'react';
+import { RcTable, Caption, Header } from '@shawnsandy/rc-table';
+/**
+ * Table Component
+ */
+export class RcTable extends React.Component {
+
+    constructor(props) {
+        super(props)
+    }
+
+
+    render() {
+
+
+        var cols = this.props.colTables;
+
+
+        return(
+
+                <table className={this.props.selector} ref="dataTable">
+                    <Caption caption={this.props.tableCaption}/>
+                    <Header cols={this.props.cols }/>
+                    <TableBody data={this.props.data} colTables={this.props.colTables}  />
+                </table>
+
+        )
+
+    }
+
+}
 ```
 
 ## Contribute
