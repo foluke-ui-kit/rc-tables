@@ -50,11 +50,11 @@ __In a react app__
 
 ```
 import React from 'react';
-import { RcTable, Caption, Header } from '@shawnsandy/rc-table';
+import { TableBody, Caption, Header } from '@shawnsandy/rc-table';
 /**
  * Table Component
  */
-export class RcTable extends React.Component {
+export class Table extends React.Component {
 
     constructor(props) {
         super(props)
@@ -78,16 +78,16 @@ export class RcTable extends React.Component {
 
     }
     
-    RcTable.defaultProps = {
+    Table.defaultProps = {
         selector: 'table table-hover',
         tableCaption: '',
         colTables: []
     }    
     
-    TableBody.defaultProps = {
+   Table.defaultProps = {
         data: [],
         colTables: [],
-        'cols:[]
+        cols:[]
     }
 
 
