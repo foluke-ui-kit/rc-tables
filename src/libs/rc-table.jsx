@@ -68,9 +68,9 @@ export class Header extends React.Component {
 
 }
 
-Header.PropTypes = {
-    cols: React.PropTypes.array.isRequired
-}
+//Header.PropTypes = {
+//    cols: React.PropTypes.array.isRequired
+//}
 
 Header.defaultProps = {
     cols: ['Id', 'First Name', 'Last Name']
@@ -88,14 +88,15 @@ export class Rows extends React.Component {
 
     render() {
         var data = this.props.data;
-       // console.log(data);
+        // console.log(data);
 
 //
         var rows = this.props.colsTables.map(function (d, k) {
 
             return (
+
                 <td key={k}>
-                 {data[d]}
+                    {data[d]}
                 </td>
             );
 
@@ -138,7 +139,7 @@ export class TableBody extends React.Component {
 
         var rows = data.map(function (row, key) {
             return (
-                <Rows colsTables={cols} data={row} key={key} />
+                <Rows colsTables={cols} data={row} key={key}/>
             )
         });
 
@@ -163,7 +164,6 @@ TableBody.defaultProps = {
 }
 
 
-
 /**
  * Table Component
  */
@@ -180,14 +180,15 @@ export class RcTable extends React.Component {
         var cols = this.props.colTables;
 
 
-        return(
-
+        return (
+            <div ref="rcTable">
                 <table className={this.props.selector} ref="dataTable">
                     <Caption caption={this.props.tableCaption}/>
                     <Header cols={this.props.cols }/>
-                    <TableBody data={this.props.data} colTables={this.props.colTables}  />
+                    <TableBody data={this.props.data} colTables={this.props.colTables}/>
                 </table>
 
+            </div>
         )
 
     }
