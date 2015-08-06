@@ -110,7 +110,7 @@ export class Rows extends React.Component {
 
 }
 
-Rows.PropTypes = {
+Rows.propTypes = {
     data: React.PropTypes.object.isRequired,
     colsTables: React.PropTypes.array.isRequired
 }
@@ -152,7 +152,7 @@ export class TableBody extends React.Component {
 
 }
 
-TableBody.PropTypes = {
+TableBody.propTypes = {
     colTables: React.PropTypes.array.isRequired,
     data: React.PropTypes.array.isRequired
 }
@@ -203,7 +203,7 @@ RcTable.defaultProps = {
 }
 
 
-TableBody.defaultProps = {
+RcTable.defaultProps = {
     data: [],
     colTables: []
 
