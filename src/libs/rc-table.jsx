@@ -187,7 +187,6 @@ export class RcTable extends React.Component {
                     <Header cols={this.props.cols }/>
                     <TableBody data={this.props.data} colTables={this.props.colTables}/>
                 </table>
-
             </div>
         )
 
@@ -200,12 +199,5 @@ RcTable.defaultProps = {
     selector: 'table table-hover',
     tableCaption: '',
     colTables: []
-}
-
-
-RcTable.defaultProps = {
-    data: [],
-    colTables: []
-
 }
 
