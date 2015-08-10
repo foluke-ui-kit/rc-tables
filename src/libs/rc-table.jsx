@@ -176,10 +176,6 @@ export class RcTable extends React.Component {
 
     render() {
 
-
-        var cols = this.props.colTables;
-
-
         return (
             <div ref="rcTable">
                 <table className={this.props.selector} ref="dataTable">
@@ -188,7 +184,7 @@ export class RcTable extends React.Component {
                     <TableBody data={this.props.data} colTables={this.props.colTables}/>
                 </table>
             </div>
-        )
+        );
 
     }
 
